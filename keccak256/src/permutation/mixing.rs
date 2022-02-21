@@ -355,7 +355,7 @@ impl<F: FieldExt> MixingConfig<F> {
 mod tests {
     use super::*;
     use crate::common::{State, PERMUTATION, ROUND_CONSTANTS};
-    use crate::gates::gate_helpers::biguint_to_f;
+    use crate::permutation::gate_helpers::biguint_to_f;
     use halo2::circuit::Layouter;
     use halo2::plonk::{ConstraintSystem, Error};
     use halo2::{circuit::SimpleFloorPlanner, dev::MockProver, plonk::Circuit};

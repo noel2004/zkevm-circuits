@@ -4,7 +4,7 @@ use halo2::{
     poly::Rotation,
 };
 
-use crate::gates::tables::BaseInfo;
+use crate::permutation::tables::BaseInfo;
 use pairing::arithmetic::FieldExt;
 
 #[derive(Clone, Debug)]
@@ -164,7 +164,7 @@ impl<F: FieldExt> BaseConversionConfig<F> {
 mod tests {
     use super::*;
     use crate::arith_helpers::{convert_b2_to_b13, convert_b9_lane_to_b13};
-    use crate::gates::{
+    use crate::permutation::{
         gate_helpers::biguint_to_f,
         tables::{FromBase9TableConfig, FromBinaryTableConfig},
     };

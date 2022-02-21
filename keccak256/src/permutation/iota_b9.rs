@@ -1,7 +1,7 @@
 use crate::arith_helpers::*;
 use crate::common::*;
-use crate::gates::gate_helpers::biguint_to_f;
 use crate::keccak_arith::*;
+use crate::permutation::gate_helpers::biguint_to_f;
 use halo2::circuit::Cell;
 use halo2::circuit::Layouter;
 use halo2::plonk::Instance;
@@ -276,7 +276,7 @@ impl<F: FieldExt> IotaB9Config<F> {
 mod tests {
     use super::*;
     use crate::common::{PERMUTATION, ROUND_CONSTANTS};
-    use crate::gates::gate_helpers::biguint_to_f;
+    use crate::permutation::gate_helpers::biguint_to_f;
     use halo2::circuit::Layouter;
     use halo2::plonk::{Advice, Column, ConstraintSystem, Error};
     use halo2::{circuit::SimpleFloorPlanner, dev::MockProver, plonk::Circuit};

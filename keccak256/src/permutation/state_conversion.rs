@@ -3,8 +3,8 @@ use halo2::{
     plonk::{Advice, Column, ConstraintSystem, Error},
 };
 
-use crate::gates::base_conversion::BaseConversionConfig;
-use crate::gates::tables::BaseInfo;
+use crate::permutation::base_conversion::BaseConversionConfig;
+use crate::permutation::tables::BaseInfo;
 use pairing::arithmetic::FieldExt;
 use std::convert::TryInto;
 
@@ -59,7 +59,7 @@ impl<F: FieldExt> StateBaseConversion<F> {
 mod tests {
     use super::*;
     use crate::arith_helpers::convert_b2_to_b13;
-    use crate::gates::{gate_helpers::biguint_to_f, tables::FromBinaryTableConfig};
+    use crate::permutation::{gate_helpers::biguint_to_f, tables::FromBinaryTableConfig};
     use halo2::{
         circuit::{Layouter, SimpleFloorPlanner},
         dev::MockProver,
